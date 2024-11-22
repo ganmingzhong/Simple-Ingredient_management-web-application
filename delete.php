@@ -25,16 +25,26 @@ if(isset($_POST['cancel_delete']))
     exit;
 }
 
+$sql_read="Select Ing_name from Ingredient where Ing_id = :ing_id";
+$stmt_read = $pdo->prepare($sql_read);
+$stmt_read->execute(
+    array(":ing_id" =>$_GET['Ing_id'],)
+);
+
+$row = $stmt_read->fetch(PDO::FETCH_ASSOC);
+
+
 
 ?>
 
 <html lang="en">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="delete.css">
     <style>
     </style>
     <script src=""></script>
     <body>
-        <p>Remove Ingredient</p>
+        <div>
+        <p>Remove Ingredient <?php echo $row["Ing_name"];?></p>
         <form method="post">
 
 
@@ -49,5 +59,6 @@ if(isset($_POST['cancel_delete']))
                     </td> 
             </table>
         </form>
+        </div>
     </body>
     </html>
