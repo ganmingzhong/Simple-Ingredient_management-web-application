@@ -28,3 +28,8 @@ div{
 td{
     padding-right:10px;
 }
+
+#error_m{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+}

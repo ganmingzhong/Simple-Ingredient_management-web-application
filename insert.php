@@ -2,11 +2,7 @@
 require_once "pdo.php";
 session_start();
 
-if(isset($_SESSION['error']))
-{
-    echo("<p>".$_SESSION['error']."</p>");
-    unset($_SESSION['error']);
-}
+
 
 if(isset($_POST['cancel_insert']))
 {
@@ -49,6 +45,15 @@ if (isset($_POST['confirm_insert'])) {
         
         <div>
         <p id="title">Insert New Ingredient</p>
+
+        <?php
+            if(isset($_SESSION['error']))
+            {
+                echo("<p id='error_m'>".$_SESSION['error']."</p>");
+                unset($_SESSION['error']);
+            }
+        ?>
+
         <form method="post">
             <table>
             <tr>
