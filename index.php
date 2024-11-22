@@ -3,15 +3,10 @@ require_once "pdo.php";
 
 session_start();
 
-if(isset($_SESSION["error"]))
-{
-    echo("<p id='invalid_msg'>".$_SESSION['error']."</p>");
-    unset($_SESSION['error']);
-}
+
 
 if(isset($_POST['username']) && isset($_POST['password']))
 {
-    echo "<p>3</p>";
     if(strlen($_POST['username']) > 1 && strlen($_POST['password']) > 1)
     {
         $sql= "Select * from Authors WHERE Author_username = :username AND Author_pw =:password";
@@ -42,17 +37,26 @@ if(isset($_POST['username']) && isset($_POST['password']))
 ?>
 
 <html lang="en">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="index.css">
     <style>
     </style>
     <script src=""></script>
     <body>
-        <p>Login</p>
+        <div>
+        <p id="title">Login</p>
         <form method="post">
             <p>Username: <input type="text" name="username"></input></p>
             <p>Password: <input type="text" name="password"></input></p>
-            <input type="submit" name="submit" value="submit"></input>
+            <input id="submit_btn" type="submit" name="submit" value="submit"></input>
 
         </form>
+        <?php
+            if(isset($_SESSION["error"]))
+            {
+                echo("<p id='incorrect_cre'>".$_SESSION['error']."</p>");
+                unset($_SESSION['error']);
+            }
+        ?>
+        </div>
     </body>
     </html>
