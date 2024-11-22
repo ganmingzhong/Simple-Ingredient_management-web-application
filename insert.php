@@ -41,12 +41,14 @@ if (isset($_POST['confirm_insert'])) {
 ?>
 
 <html lang="en">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="insert.css">
     <style>
     </style>
     <script src=""></script>
     <body>
-        <p>Insert New Ingredient</p>
+        
+        <div>
+        <p id="title">Insert New Ingredient</p>
         <form method="post">
             <table>
             <tr>
@@ -67,13 +69,14 @@ if (isset($_POST['confirm_insert'])) {
             <table>
                 <tr>
                     <td>
-                        <input type="submit" name="confirm_insert" value="Confirm">
+                        <input id="btn" type="submit" name="confirm_insert" value="Confirm">
                     </td> 
                     
                     <td>
-                        <input type="submit" name="cancel_insert" value="Cancel">
+                        <input id="btn" type="submit" name="cancel_insert" value="Cancel">
                     </td> 
             </table>
         </form>
+        </div>
     </body>
     </html>
