@@ -75,3 +75,11 @@ tr:nth-child(odd){
 tr:nth-child(even){
     background-color: rgb(87, 82, 116);
 }
+
+
+#success_m{
+    margin-left:50px;
+    font-size: 25px;
+    color:green;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

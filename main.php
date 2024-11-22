@@ -17,11 +17,6 @@ if($row==false)
 
 }
 
-if(isset($_SESSION['success']))
-{
-    echo ("<p>".$_SESSION['success']."</p>");
-    unset($_SESSION['success']);
-}
 
 if(isset($_POST["insert"]))
 {
@@ -53,6 +48,12 @@ if(isset($_POST["back"]))
         <p id="title">Welcome<?php echo " ".$_GET['name']?></p>
         <div>
         <?php
+            if(isset($_SESSION['success']))
+            {
+                echo ("<p id='success_m'>".$_SESSION['success']."</p>");
+                unset($_SESSION['success']);
+            }
+
             $sql_ing = "Select * from Ingredient";
             $stmt_ing = $pdo->prepare($sql_ing);
             $stmt_ing->execute();
