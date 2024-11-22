@@ -1,0 +1,77 @@
+html{
+    background-color: rgb(194, 246, 229);
+}
+
+body{
+    padding:50px;  
+}
+
+
+
+table{
+    margin-left:50px;
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+
+td,th{
+    width:30px;
+    border-style:solid;
+    border-width: 1px;
+    text-align: center;
+    height: 45px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(245, 232, 215);
+}
+
+#title{
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:rgb(100, 63, 39);
+}
+
+form{
+    margin:15px;
+}
+
+#insert-back-btn{
+    margin: 50px;
+}
+
+#delete-btn,.btn{
+    border-radius: 0;
+    padding : 8px;
+    padding-right:  20px;
+    padding-left:  20px;
+    background-color: rgb(104, 143, 131);
+    border:none;
+    color:rgb(217, 241, 234)
+}
+
+#delete-btn:hover,.btn:hover{
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+    
+#delete-td {
+    border: none; 
+    text-align: left;
+    padding-left:  30px;
+    padding-right:  0px;
+    width:20px;
+    background-color: rgb(194, 246, 229);
+}
+
+
+
+th{
+    background-color:rgb(81, 118, 118);
+}
+
+tr:nth-child(odd){
+    background-color: rgb(152,150,164);
+}
+
+tr:nth-child(even){
+    background-color: rgb(87, 82, 116);
+}

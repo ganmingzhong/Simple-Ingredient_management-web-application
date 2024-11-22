@@ -1,0 +1,32 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+
+div{
+    padding:60px;
+    background-color: rgb(197, 201, 205);
+}
+
+input{
+    border-radius: 0;
+    padding : 8px;
+    padding-right:  20px;
+    padding-left:  20px;
+    background-color: rgb(104, 143, 131);
+    border:none;
+    color:rgb(217, 241, 234)
+}
+
+p{
+    margin-bottom: 30px;
+    font-size: 20px;
+    
+}
+
+td{
+    padding-right:10px;
+}
