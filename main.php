@@ -44,13 +44,14 @@ if(isset($_POST["back"]))
 ?>
 
 <html lang="en">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="main.css">
     <style>
     </style>
     <script src=""></script>
     <body>
-        <p>Welcome<?php echo " ".$_GET['name']?></p>
         
+        <p id="title">Welcome<?php echo " ".$_GET['name']?></p>
+        <div>
         <?php
             $sql_ing = "Select * from Ingredient";
             $stmt_ing = $pdo->prepare($sql_ing);
@@ -59,33 +60,44 @@ if(isset($_POST["back"]))
             $Ing_name = array();
 
             
-            echo('<table id="ing_table" border=1>');
+            echo('<table id="ing_table">');
+            $numbering = 1;
+            echo("<th>No</th>
+                <th>Ingredient</th>
+                <th>Amount</th>
+                <th>Unit</th>
+                <th>Type</th>
+                <th>Expire date</th>");
             while($row=$stmt_ing->fetch(PDO::FETCH_ASSOC))
             {
                 echo("<tr>
-                        <td>");
-                        echo(htmlentities($row['Ing_id']).'</td>');
+                        ");
+                        echo('<td>'.$numbering.'</td>');
                         echo('<td>'.htmlentities($row['Ing_name']).'</td>');
                         echo('<td>'.htmlentities($row['Ing_amount']).'</td>');
                         echo('<td>'.htmlentities($row['Ing_unit']).'</td>');
                         echo('<td>'.htmlentities($row['Ing_type']).'</td>');
                         echo('<td>'.htmlentities($row['Ing_expdate']).'</td>');
 
-                        echo('<form method="post">');
-                        echo('<td>'.'<input type="submit" name="delete" value="delete">'.'</td>');
-                        echo('<td>'.'<input type="hidden" name="id" value='.htmlentities($row['Ing_id']) .'></td>');
+                        echo('<form method="post" >');
+                        echo('<td id="delete-td">'.'<input id="delete-btn"  type="submit" name="delete" value="delete">'.'</td>');
+                        echo('<input type="hidden" name="id" value='.htmlentities($row['Ing_id']).'>');
                         echo("</form>");
                 echo('</tr>');
+                $numbering=$numbering+1;
             }
 
-            echo('</table">');
+            echo('</table>');
             
         ?>
+        </div>
 
+        <div id="insert-back-btn">
         <form method="post">
-            <input type="submit" name="insert" value="Insert">
-            <input type="submit" name="back" value="Back">
+            <input class="btn" type="submit" name="insert" value="Insert">
+            <input class="btn" type="submit" name="back" value="Back">
         </form>
+        </div>
     </body>
     </html>
 
